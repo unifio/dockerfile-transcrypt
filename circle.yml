@@ -1,0 +1,26 @@
+machine:
+  environment:
+    TC_VERSION: 0.9.7
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - "~/docker"
+  override:
+    - docker info
+    - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
+    - docker build -t unifio/transcrypt .
+    - mkdir -p ~/docker; docker save unifio/transcrypt > ~/docker/image.tar
+
+test:
+  override:
+    - docker run unifio/transcrypt -v
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker tag -f `docker images | grep -E 'unifio/transcrypt' | awk '{print $3}'` unifio/transcrypt:${TC_VERSION}
+      - docker push unifio/transcrypt
