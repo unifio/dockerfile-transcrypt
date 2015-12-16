@@ -2,7 +2,7 @@ FROM alpine:3.2
 
 ENV TRANSCRYPT_VERSION 0.9.7
 
-RUN apk add --update bash git openssl && \
+RUN apk add --update bash grep git openssl && \
     cd /usr/local && \
     git clone https://github.com/elasticdog/transcrypt.git && \
     cd transcrypt && \
