@@ -1,7 +1,7 @@
 FROM alpine:3.4
 MAINTAINER "Unif.io, Inc. <support@unif.io>"
 
-ENV TRANSCRYPT_VERSION 0.9.8
+ENV TRANSCRYPT_VERSION 0.9.9
 
 RUN apk add --no-cache --update bash grep git openssl && \
     cd /usr/local && \
