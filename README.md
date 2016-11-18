@@ -1,4 +1,5 @@
 # Unif.io Transcrypt Dockerfile
+[![CircleCI](https://circleci.com/gh/unifio/dockerfile-transcrypt.svg?style=svg)](https://circleci.com/gh/unifio/dockerfile-transcrypt)
 
 ## What is Transcrypt?
 
