@@ -1,6 +1,6 @@
 machine:
   environment:
-    TC_VERSION: 0.9.8
+    TC_VERSION: 0.9.9
   services:
     - docker
 
