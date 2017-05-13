@@ -15,4 +15,3 @@ WORKDIR /data
 
 ENTRYPOINT ["/bin/transcrypt"]
 
-CMD ["--help"]
